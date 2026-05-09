@@ -7,9 +7,10 @@ A full-stack web application simulating a Two-Pass Macro Processor used in Syste
 ## Features
 
 - **Interactive Editor:** Write your MiniMacro code with line numbers and syntax styling.
-- **Pass 1 Processing:** Generates the Macro Name Table (MNT), Macro Definition Table (MDT), and intermediate code.
+- **Pass 1 Processing:** Generates the Macro Name Table (MNT), Macro Definition Table (MDT), Argument List Array (ALA), and intermediate code.
 - **Pass 2 Processing:** Expands macros using parameters and replaces formal parameters with actual arguments.
 - **Error Handling:** Robust error reporting for issues like missing MEND, incorrect parameter counts, undefined macros, and duplicates.
+- **Extra Tools:** Run both passes at once, download expanded code as `.asm`, and instantly load sample macro programs for testing.
 - **Beautiful UI:** Modern, dark-themed, compiler-style interface inspired by modern developer tools.
 
 ## Prerequisites
@@ -23,10 +24,10 @@ Follow these steps to run the application locally.
 
 ### 1. Setup Backend (Flask API)
 
-Open a terminal and navigate to the `server` directory:
+Open a terminal and navigate to the `backend` directory:
 
 ```bash
-cd server
+cd backend
 ```
 
 Install the required Python dependencies:
@@ -44,10 +45,10 @@ python app.py
 
 ### 2. Setup Frontend (React + Vite)
 
-Open a new terminal and navigate to the `client` directory:
+Open a new terminal and navigate to the `frontend` directory:
 
 ```bash
-cd client
+cd frontend
 ```
 
 Install the NPM dependencies:
@@ -75,11 +76,11 @@ npm run dev
 
 \`\`\`text
 .
-├── client/                 # React + Vite frontend
+├── frontend/                 # React + Vite frontend
 │   ├── package.json
 │   ├── src/                # UI Components and styles
 │   └── ...
-├── server/                 # Python Flask backend
+├── backend/                 # Python Flask backend
 │   ├── app.py              # Main API entry
 │   ├── processor/          # Core SPCC Logic
 │   │   ├── pass1.py
